@@ -16,15 +16,15 @@ Update dataprovider.py by add your Hugginging face key and OpenAI key for
 key = ''
 hg_key =""
 ```
-### Choose LLM for Chatbot, Goto opensource_llm_rag_app.py file and open in code editor 
+### Choose LLM for Chatbot, Goto deepseek_r1_rag_app.py file and open in code editor 
 goto code line 21:
 
 ```python
 llm = Ollama(model="deepseek-r1:1.5b", request_timeout=120.0)
 ```
 1. if you want to use OpenAI LLM then uncomment code line 77 and comment 78 line
-2. if you want to use opensource LLM mistral 7b through Ollama
-  Run below coommand to download mistral 7b model locally
+2. if you want to use opensource LLM deepseek-r1 through Ollama
+  Run below coommand to download deepseek-r1 1.5b model locally
 ```python
 ollama pull deepseek-r1:1.5b
 ```   
@@ -34,7 +34,7 @@ ollama pull deepseek-r1:1.5b
 
 Run below python file to productionize Chatbot powered by opensource LLM and RAG with llama index and flask
 ```python
-opensource_llm_rag_app.py
+deepseek_r1_rag_app.py
 ```
 ## Contributing
 
