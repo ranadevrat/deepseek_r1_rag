@@ -1,5 +1,5 @@
 # Opensource LLM App
-Chatbot powered by opensource LLM Llama 3.1 and RAG with llama index and flask
+Chatbot powered by opensource deepseek-r1:1.5b and RAG with llama index and flask
 
 ## Installation
 
@@ -20,13 +20,13 @@ hg_key =""
 goto code line 21:
 
 ```python
-llm = Ollama(model="llama3.1:latest", request_timeout=120.0)
+llm = Ollama(model="deepseek-r1:1.5b", request_timeout=120.0)
 ```
 1. if you want to use OpenAI LLM then uncomment code line 77 and comment 78 line
 2. if you want to use opensource LLM mistral 7b through Ollama
   Run below coommand to download mistral 7b model locally
 ```python
-ollama pull mistral
+ollama pull deepseek-r1:1.5b
 ```   
    
 
