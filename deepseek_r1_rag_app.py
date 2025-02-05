@@ -10,9 +10,9 @@ from llama_index.core import load_index_from_storage
 from llama_index.llms.ollama import Ollama
 from llama_index.core import Settings
 # sentence transformers
-from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
-embed_model = OpenAIEmbedding()
+embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
 
 app = Flask(__name__)
@@ -21,7 +21,7 @@ app = Flask(__name__)
 llm = Ollama(model="deepseek-r1:1.5b", request_timeout=120.0)
 
 
-def build_sentence_window_index(documents,llm, embed_model=OpenAIEmbedding(),sentence_window_size=3,
+def build_sentence_window_index(documents,llm, embed_model=embed_model,sentence_window_size=3,
                                 save_dir="sentence_index",):
     # create the sentence window node parser w/ default settings
     node_parser = SentenceWindowNodeParser.from_defaults(
